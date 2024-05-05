@@ -6,10 +6,18 @@
 
   ## Installation
 
-  Install with pip:
+  Install backend with pip:
 
   ```bash
+    cd backend
     pip install -r requirements.txt
+  ```
+
+  Install frontend with npm:
+
+  ```bash
+    cd frontend
+    pnpm install
   ```
 
   ## Usage
@@ -17,12 +25,24 @@
   Start backend server:
 
   ```bash
+    cd backend
     py manage.py runserver
+  ```
+
+  Start frontend server:
+
+  ```bash
+    cd frontend
+    npm run dev
   ```
 
   Visit Django REST framework backend website:
 
-  - http://127.0.0.1:8000/api/tasks/
+  - http://127.0.0.1:8000
+
+  Visit NextJS frontend website:
+
+  - http://localhost:3000
 
 ---
 
