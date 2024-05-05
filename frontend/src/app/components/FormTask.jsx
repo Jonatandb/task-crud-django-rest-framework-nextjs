@@ -1,11 +1,12 @@
 'use client'
 
 import { useState } from "react"
+import { useRouter } from 'next/navigation'
 
 const FormTask = () => {
-
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
+  const router = useRouter()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -20,11 +21,11 @@ const FormTask = () => {
       })
     })
     const tasks = await res.json()
-    console.log(tasks);
+    router.refresh()
   }
 
   return (
-    <div className='bg-slate-200 p-7'>
+    <div className='bg-slate-200 p-7 h-fit'>
       <h1 className='text-black font-bold'>Añadir Tarea</h1>
       <form action='' onSubmit={handleSubmit}>
         <label htmlFor="title" className="text-xs text-black">Título:</label>

@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic"
 import { FormTask, ListTask } from "./components"
 
 const HomePage = () => {
