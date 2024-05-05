@@ -1,5 +1,4 @@
-import FormTask from "./components/FormTask"
-import ListTask from "./components/ListTask"
+import { FormTask, ListTask } from "./components"
 
 const HomePage = () => {
   return (
