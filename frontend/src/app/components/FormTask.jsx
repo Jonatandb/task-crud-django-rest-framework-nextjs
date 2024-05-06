@@ -31,13 +31,13 @@ const FormTask = () => {
         <label htmlFor="title" className="text-xs text-black">Título:</label>
         <input
           type='text'
-          name='title'
+          id='title'
           className='bg-slate-400 rounded-md p-2 mb-2 block w-full text-slate-900'
           onChange={(e) => setTitle(e.target.value)}
         />
         <label htmlFor="description" className="text-xs text-black">Descripción:</label>
         <textarea
-          name='description'
+          id='description'
           className='bg-slate-400 rounded-md p-2 mb-2 block w-full text-slate-900'
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
