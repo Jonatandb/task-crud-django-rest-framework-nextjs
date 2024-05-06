@@ -1,12 +1,23 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { useRouter } from 'next/navigation'
 
 const FormTask = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const router = useRouter()
+  const inputTitleRef = useRef(null)
+
+  useEffect(() => {
+    setTitleFocus()
+  }, [])
+
+  function setTitleFocus() {
+    if (inputTitleRef.current) {
+      inputTitleRef.current.focus()
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -20,8 +31,14 @@ const FormTask = () => {
         description
       })
     })
-    const tasks = await res.json()
-    router.refresh()
+    if (res.status == 201) {
+      setTitle('')
+      setDescription('')
+      router.refresh()
+    } else {
+      alert('Error al crear la tarea ⚠')
+    }
+    setTitleFocus()
   }
 
   return (
@@ -34,12 +51,16 @@ const FormTask = () => {
           id='title'
           className='bg-slate-400 rounded-md p-2 mb-2 block w-full text-slate-900'
           onChange={(e) => setTitle(e.target.value)}
+          value={title}
+          ref={inputTitleRef}
+          required
         />
         <label htmlFor="description" className="text-xs text-black">Descripción:</label>
         <textarea
           id='description'
           className='bg-slate-400 rounded-md p-2 mb-2 block w-full text-slate-900'
           onChange={(e) => setDescription(e.target.value)}
+          value={description}
         ></textarea>
         <button className="bg-indigo-500 text-white rounded-md p-2 block w-full">Guardar</button>
       </form>
