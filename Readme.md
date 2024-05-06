@@ -3,6 +3,11 @@
 
   Python backend, Javascript frontend.
 
+---
+
+![Task App Screenshot](image.png)
+
+---
 
   ## Installation
 

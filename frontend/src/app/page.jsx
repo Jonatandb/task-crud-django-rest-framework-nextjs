@@ -4,14 +4,13 @@ export const dynamic = "force-dynamic"
 
 const HomePage = () => {
   return (
-    <div className="container mx-auto">
-      <h1>Tasks App</h1>
+    <main className="container mx-auto">
+      <h1 className="text-3xl m-4 text-center ">Aplicación de tareas 📝</h1>
       <div className="flex gap-x-10">
         <FormTask />
         <ListTask />
       </div>
-
-    </div>
+    </main>
   )
 }
 

@@ -42,7 +42,7 @@ const FormTask = () => {
   }
 
   return (
-    <div className='bg-slate-200 p-7 h-fit'>
+    <div className='bg-slate-200 p-4 h-fit'>
       <h1 className='text-black font-bold'>Añadir Tarea</h1>
       <form action='' onSubmit={handleSubmit}>
         <label htmlFor="title" className="text-xs text-black">Título:</label>

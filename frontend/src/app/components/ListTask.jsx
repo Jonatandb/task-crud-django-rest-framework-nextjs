@@ -16,9 +16,14 @@ async function ListTask() {
       className="bg-slate-700 p-4 w-full"
     >
 
-      <h1>Lista de tareas</h1>
+      <h1 className="mb-2">
+        {
+          tasks?.length > 0 ? 'Tareas 📝' : 'Aún no hay tareas 🔎'
+        }
+      </h1>
 
       {
+        tasks?.length > 0 &&
         tasks.map(task => (
           <TaskCard task={task} key={task.id} />
         ))
