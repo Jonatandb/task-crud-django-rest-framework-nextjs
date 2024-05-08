@@ -91,7 +91,7 @@ const TaskCard = ({ task }) => {
             className="text-white rounded-md p-2 bg-indigo-500"
             onClick={() => handleUpdate(task.id)}
           >
-            Guardar cambios
+            Guardar
           </button>
         )}
         <button
@@ -104,18 +104,18 @@ const TaskCard = ({ task }) => {
           {task.done ? 'Desmarcar' : 'Marcar'}
         </button>
         <button
+        className="bg-blue-500 text-white rounded-md p-2"
+        onClick={() => {
+          setIsEditing(!isEditing);
+        }}
+        >
+        {isEditing ? 'Cancelar' : 'Editar'}
+        </button>
+        <button
           className="bg-red-500 text-white rounded-md p-2"
           onClick={() => handleDelete(task.id)}
         >
           Eliminar
-        </button>
-        <button
-          className="bg-blue-500 text-white rounded-md p-2"
-          onClick={() => {
-            setIsEditing(!isEditing);
-          }}
-        >
-          {isEditing ? 'Cancelar' : 'Editar'}
         </button>
       </div>
     </div>
