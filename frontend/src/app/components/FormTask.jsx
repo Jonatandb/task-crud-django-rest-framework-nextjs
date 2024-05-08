@@ -62,7 +62,7 @@ const FormTask = () => {
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         ></textarea>
-        <button className="bg-indigo-500 text-white rounded-md p-2 block w-full">Guardar</button>
+        <button className="bg-indigo-500 text-white rounded-md p-2 block w-full select-none">Guardar</button>
       </form>
     </div>
   )

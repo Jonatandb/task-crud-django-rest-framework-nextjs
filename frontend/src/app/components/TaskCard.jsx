@@ -19,7 +19,7 @@ const TaskCard = ({ task }) => {
   }, [isEditing])
 
   const handleDelete = async (id) => {
-    if (window.confirm('Seguro que quieres eliminar esta tarea?')) {
+    if (window.confirm('¿Seguro que quieres eliminar esta tarea?')) {
       const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/tasks/${id}/`, {
         method: 'DELETE'
       })
@@ -88,7 +88,7 @@ const TaskCard = ({ task }) => {
       <div className="flex justify-between gap-x-2">
         {isEditing && (
           <button
-            className="text-white rounded-md p-2 bg-indigo-500"
+            className="text-white rounded-md p-2 bg-green-500 select-none"
             onClick={() => handleUpdate(task.id)}
           >
             Guardar
@@ -96,15 +96,15 @@ const TaskCard = ({ task }) => {
         )}
         <button
           className={
-            "text-white rounded-md p-2" +
-            (task.done ? ' bg-gray-800' : ' bg-green-500')
+            "text-white rounded-md p-2  select-none" +
+            (task.done ? ' bg-gray-800' : ' bg-indigo-500')
           }
           onClick={() => handleTaskDone(task.id)}
         >
           {task.done ? 'Desmarcar' : 'Marcar'}
         </button>
         <button
-        className="bg-blue-500 text-white rounded-md p-2"
+          className="bg-blue-500 text-white rounded-md p-2  select-none"
         onClick={() => {
           setIsEditing(!isEditing);
         }}
@@ -112,7 +112,7 @@ const TaskCard = ({ task }) => {
         {isEditing ? 'Cancelar' : 'Editar'}
         </button>
         <button
-          className="bg-red-500 text-white rounded-md p-2"
+          className="bg-red-500 text-white rounded-md p-2  select-none"
           onClick={() => handleDelete(task.id)}
         >
           Eliminar
