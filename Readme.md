@@ -5,7 +5,7 @@
 
 ---
 
-![Task App Screenshot](image.png)
+![Tasks App Preview](Final_Result_Preview.gif)
 
 ---
 
