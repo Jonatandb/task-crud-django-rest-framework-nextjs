@@ -2,7 +2,8 @@ import TaskCard from "./TaskCard"
 
 // NextJS server code
 async function loadTasks() {
-  const res = await fetch(`${process.env.BACKEND_URL}/api/tasks/`)
+  // https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#individual-fetch-requests
+  const res = await fetch(`${process.env.BACKEND_URL}/api/tasks/`, { cache: 'no-store'})
   const tasks = await res.json()
   return tasks
 }
