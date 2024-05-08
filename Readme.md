@@ -25,6 +25,8 @@
     pnpm install
   ```
 
+  Rename file ```/frontend/.env.example``` to ```/frontend/.env```
+
   ## Usage
 
   Start backend server:
@@ -41,14 +43,13 @@
     npm run dev
   ```
 
-  Visit Django REST framework backend website:
-
-  - http://127.0.0.1:8000
-
-  Visit NextJS frontend website:
+  ## Visit NextJS frontend website:
 
   - http://localhost:3000
 
+  ## Visit Django REST framework backend website:
+
+  - http://127.0.0.1:8000
 ---
 
   ## [Django REST framework ViewSet](https://www.django-rest-framework.org/api-guide/viewsets/)
